@@ -36,7 +36,7 @@ public class BallScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
-        // Randomly decide the direction x/y and angle of the ball.
+        // Randomly decide the x/y direction and angle of the ball.
         xDirection *= -1;
         speedY =  speedX * (float) Math.Clamp(rand.NextDouble(), 0.2, 0.8);
         yDirection = Mathf.Sign(rand.Next(-1, 1));
