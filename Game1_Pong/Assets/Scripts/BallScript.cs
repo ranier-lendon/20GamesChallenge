@@ -4,6 +4,7 @@ using Random = System.Random;
 
 public class BallScript : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     private Random rand = new();
     private Rigidbody2D rb;
     [SerializeField] private float speedX = 200f;
@@ -25,11 +26,28 @@ public class BallScript : MonoBehaviour
             yDirection = Mathf.Sign(rand.Next(-1, 1));
         }
 
-        // Checks if collided with a wall/border
+        // Checks if collided with top/bottom border
         if (collision.gameObject.tag == "Wall")
         {
             yDirection *= -1;
         }
+        
+        // Checks if collided with left/right border
+        if (collision.gameObject.tag == "Finish")
+        {
+            gameManager.AddScore(xDirection);
+        }
+    }
+
+    public void Reset()
+    {
+        speedX = 200f;
+        rb.position = new Vector2(0, 0);
+        
+        // Randomly decide the x/y direction and angle of the ball.
+        xDirection *= -1;
+        speedY =  speedX * (float) Math.Clamp(rand.NextDouble(), 0.2, 0.8);
+        yDirection = Mathf.Sign(rand.Next(-1, 1));
     }
     
     void Start()
@@ -40,11 +58,6 @@ public class BallScript : MonoBehaviour
         xDirection *= -1;
         speedY =  speedX * (float) Math.Clamp(rand.NextDouble(), 0.2, 0.8);
         yDirection = Mathf.Sign(rand.Next(-1, 1));
-    }
-    
-    void Update()
-    {
-        
     }
 
     void FixedUpdate()
