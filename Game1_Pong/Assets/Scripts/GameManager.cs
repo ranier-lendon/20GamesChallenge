@@ -4,6 +4,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI gameOver;
     private int score1 = 0, score2 = 0;
     [SerializeField] private GameObject paddles;
     [SerializeField] private GameObject ball;
@@ -14,7 +15,9 @@ public class GameManager : MonoBehaviour
         else score2++;
 
         UpdateUI();
-        GameReset();
+
+        if (score1 >= 3 || score2 >= 3) GameOver();
+        else GameReset();
     }
 
     void UpdateUI()
@@ -32,5 +35,11 @@ public class GameManager : MonoBehaviour
         paddle2.position = new Vector2(8, 0);
         ballScript.Reset();
     }
-    
+
+    void GameOver()
+    {
+        int winner = score1 >= 3 ? 1 : 2;
+        gameOver.text = $"Player {winner} won!";
+        gameOver.gameObject.SetActive(true);
+    }
 }
