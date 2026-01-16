@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: input.m_SingletonActionBindings.Array.data[2].m_Path
       value: <Keyboard>/downArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8699803006235282806, guid: 1e3007ffc2821754e84b1427beea1c4a, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -438,8 +442,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74
-  m_fontSizeBase: 74
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -554,6 +558,10 @@ PrefabInstance:
     - target: {fileID: 7899493190692654264, guid: 1e3007ffc2821754e84b1427beea1c4a, type: 3}
       propertyPath: input.m_SingletonActionBindings.Array.data[2].m_Path
       value: <Keyboard>/s
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699803006235282806, guid: 1e3007ffc2821754e84b1427beea1c4a, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1017,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   scoreText: {fileID: 2036865839}
+  gameOver: {fileID: 188455349}
   paddles: {fileID: 1160494648}
   ball: {fileID: 1156956482}
 --- !u!4 &940205399

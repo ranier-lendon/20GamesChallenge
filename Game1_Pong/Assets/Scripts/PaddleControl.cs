@@ -1,3 +1,4 @@
+using System.Net;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,7 @@ public class PaddleControl : MonoBehaviour
     [SerializeField] private InputAction input;
     [SerializeField] private int speed = 10;
     private Vector2 move = Vector2.zero;
-
+    
     void OnEnable()
     {
         input.Enable();
@@ -31,5 +32,9 @@ public class PaddleControl : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = move * speed;
+        
+        // Prevents paddle from goind out the screen
+        float clampedY = Mathf.Clamp(rb.position.y, -3.35f, 3.35f);
+        rb.position = new Vector2(rb.position.x, clampedY);
     }
 }
