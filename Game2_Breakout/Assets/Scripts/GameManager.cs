@@ -35,6 +35,24 @@ public class GameManager : MonoBehaviour
                     startPosition.y + brickLength.y * 2 * row * gap.y
                     );
                 
+                switch (brickData)
+                {
+                    case 1:
+                        spriteRenderer.color = new Color(255, 255, 255);
+                        break;
+                    case 2:
+                        spriteRenderer.color = new Color(0, 255, 0);
+                        break;
+                    case 3:
+                        spriteRenderer.color = new Color(0, 0, 255);
+                        break;
+                    case 4:
+                        spriteRenderer.color = new Color(255, 0, 255);
+                        break;
+                    case 5:
+                        spriteRenderer.color = new Color(255, 0, 0);
+                        break;
+                }
                 Instantiate(brickPrefab, pos, Quaternion.identity, brickContainer);
             }
         }
