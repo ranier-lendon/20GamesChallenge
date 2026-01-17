@@ -35,6 +35,11 @@ public class BallScript : MonoBehaviour
         {
             xDirection *= -1;
         }
+
+        if (collision.gameObject.tag == "Brick")
+        {
+            yDirection *= -1;
+        }
     }
 
     void Start()
