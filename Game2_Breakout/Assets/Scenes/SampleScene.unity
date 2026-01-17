@@ -279,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 456259112}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.096, y: -5.2383, z: 0}
+  m_LocalPosition: {x: -9.093, y: -5.239, z: 0}
   m_LocalScale: {x: 0.4003, y: 10.426798, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1011,12 +1011,43 @@ Transform:
   m_GameObject: {fileID: 1494761900}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.001, y: -0.012, z: 0}
   m_LocalScale: {x: 0.4003, y: 18.426237, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1887009791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &1645531412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645531413}
+  m_Layer: 0
+  m_Name: Bricks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1645531413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645531412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.22322, y: 4.27404, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723826371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee941970bb9e6a14db196109419f9c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  bricks: {fileID: 0}
+  brickPrefab: {fileID: 1723252766695675646, guid: bf51786c59503db4282092cc490ec33b, type: 3}
+  brickContainer: {fileID: 1645531413}
 --- !u!4 &1723826373
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,3 +1362,4 @@ SceneRoots:
   - {fileID: 2485175183181482728}
   - {fileID: 1887009791}
   - {fileID: 1723826373}
+  - {fileID: 1645531413}
