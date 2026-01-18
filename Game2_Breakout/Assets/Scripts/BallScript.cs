@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     private Rigidbody2D rb;
     private float angle = 0f;
     private int xDirection = -1;
@@ -39,6 +40,8 @@ public class BallScript : MonoBehaviour
         if (collision.gameObject.tag == "Brick")
         {
             yDirection *= -1;
+            
+            gameManager.BrickCollided(transform.position);
         }
     }
 

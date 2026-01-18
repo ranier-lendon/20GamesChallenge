@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,14 @@ public class GameManager : MonoBehaviour
         { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 },
         { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
     };
+
+    public void BrickCollided(Vector2 collisionPosition)
+    {
+        int x = (int) Math.Ceiling(collisionPosition.y / (brickLength.y + gap.y)) - 6;
+        int y = (int) Math.Ceiling(collisionPosition.x / (brickLength.x + gap.x)) + 7;
+
+        map[x, y]--;
+    }
 
     void GenerateMap()
     {
