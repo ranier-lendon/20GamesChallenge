@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private Vector2 brickLength;
     public Transform brickContainer;
     private Vector2 startPosition = new Vector2(-8.2f, 4.6f);
-    private Vector2 gap = new Vector2(0.55f, -0.55f);
+    private Vector2 gap = new Vector2(0.1f, 0.1f);
 
     private int[,] map =
     {
@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
                 if (brickData == 0) continue;
                 
                 Vector2 pos = new Vector2(
-                    startPosition.x + brickLength.x * col * gap.x, 
-                    startPosition.y + brickLength.y * 2 * row * gap.y
+                    startPosition.x + col * (brickLength.x + gap.x),
+                    startPosition.y - row * (brickLength.y + gap.y)
                     );
                 
                 switch (brickData)
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         float actualWidth = col.size.x * brickPrefab.transform.localScale.x;
         float actualHeight = col.size.y * brickPrefab.transform.localScale.y;
 
-        brickLength = new Vector2(actualWidth, actualHeight)*2;
+        brickLength = new Vector2(actualWidth, actualHeight);
         Debug.Log(brickLength);
         
         GenerateMap();
